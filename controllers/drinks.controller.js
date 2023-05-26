@@ -28,12 +28,12 @@ module.exports.DrinksController = {
   patchUpdate: async (req, res) => {
     try {
       const data = await Drink.findByIdAndUpdate(req.body.id, {
-        name: `${req.body.name}`,
-        price: `${req.body.price}`,
-        availability: `${req.body.availability}`,
-        caffeine: `${req.body.caffeine}`,
-        volume: `${req.body.volume}`,
-        description: `${req.body.description}`,
+        name: req.body.name,
+        price: req.body.price,
+        availability: req.body.availability,
+        caffeine: req.body.caffeine,
+        volume: req.body.volume,
+        description: req.body.description,
       });
       res.json(data);
     } catch (error) {
